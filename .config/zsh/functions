@@ -1,0 +1,22 @@
+
+function mcd() {
+    mkdir "$1" && cd "$1"
+}
+
+# Commands for UM CAEN quick access and file transfer
+function um() { 
+    ssh ljwu@login.engin.umich.edu "$1"
+}
+
+function mvToCAEN() { 
+    scp -r "$1" ljwu@login.engin.umich.edu:/afs/umich.edu/user/l/j/ljwu/"$2";
+}
+
+function mvFromCAEN() { 
+    scp -r ljwu@login.engin.umich.edu:/afs/umich.edu/user/l/j/ljwu/"$1" "$2"
+}
+
+function rmd() {
+    pandoc $1 | lynx -stdin
+}
+

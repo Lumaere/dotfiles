@@ -1,0 +1,18 @@
+[user]
+	name = Lawrence
+	email = lawrencejwu@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[core]
+	editor = vim
+[alias]
+	lg = log --graph --pretty=format:'%h%Cblue%d %Creset%s - %an'
+	lga = log --graph --pretty=format:'%h%Cblue%d %Creset%s - %an' --all
+	ci = commit
+	co = checkout
+	st = status
+
+[push]
+	default = simple

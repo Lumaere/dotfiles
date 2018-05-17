@@ -1,0 +1,48 @@
+
+alias ll='ls -AFG'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias mkdir='mkdir -pv'
+
+alias rm="echo Use 'del', or '/bin/rm'"
+alias del='rmtrash'
+
+alias cmus='cmus 2> /dev/null'
+# alias cmus='cmus'
+
+# data aggregation scripts
+alias histogram='python ~/Code/Scripts/histogram.py'
+alias ninety_five_percent='python ~/Code/Scripts/ninety_five_percent.py'
+
+# wifi and sleep aliases
+alias wifioff='networksetup -setairportpower en0 off'
+alias wifion='networksetup -setairportpower en0 on'
+alias wificycle='wifioff; wifion;'
+alias fsleep="pmset sleepnow"
+
+# weather
+alias weather='curl wttr.in/ann\ arbor'
+
+# -a to recurse into dot directories -> might want to change this
+# -C for color
+alias tree='tree -aC'
+
+# common directories
+alias class="cd ~/Documents/college/6_Semester/"
+
+# source python env for school
+alias pactivate="source ~/Documents/College/pyenv/bin/activate"
+
+# open chrome with no tab or omnibar at google.com
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app=https://google.com -incognito"
+
+# alias g++ with flags
+alias g+++='/usr/bin/g++ -std=c++14 -Wall -Wextra -Wshadow -fsanitize=address -fno-omit-frame-pointer'
+
+# for config files
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# sshing
+alias ublogin='ssh -p 2222 lawrence@127.0.0.1'
+alias winlogin="ssh -p 3025 'Lawrence Wu'@127.0.0.1"
+

@@ -1,0 +1,8 @@
+
+# colors for LS output
+export CLICOLOR=1
+export LSCOLORS=exfxcxdxbxegedabagacad
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=false
+
