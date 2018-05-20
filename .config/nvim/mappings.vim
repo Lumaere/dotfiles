@@ -29,6 +29,10 @@ nnoremap <Leader>x :wq<CR>
 " echo current filename
 nnoremap <Leader>p :echo expand('%:p')<CR>
 
+" search and replace
+nnoremap <Leader>s :%s/\\\<<C-r><C-w>\\\>//g<Left><Left>
+nnoremap <Leader>S :%s/\\\<<C-r><C-a>\\\>//g<Left><Left>
+
 " when searching use regex closer to perl
 nnoremap / /\\v
 vnoremap / /\\v
