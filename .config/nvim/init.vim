@@ -9,6 +9,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " visual
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/goyo.vim'
 
 " file search
 Plug 'ctrlpvim/ctrlp.vim' " Because command-t requires ruby and thats a hassle

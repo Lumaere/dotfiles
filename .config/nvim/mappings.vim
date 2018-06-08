@@ -33,6 +33,12 @@ nnoremap <Leader>p :echo expand('%:p')<CR>
 nnoremap <Leader>s :%s/\\\<<C-r><C-w>\\\>//g<Left><Left>
 nnoremap <Leader>S :%s/\\\<<C-r><C-a>\\\>//g<Left><Left>
 
+" output command into new tab buffer
+nnoremap <Leader>r :tabnew \| read !
+
+" toggle spell-check
+nnoremap <F6> :set spell!<CR>
+
 " when searching use regex closer to perl
 nnoremap / /\\v
 vnoremap / /\\v

@@ -44,5 +44,6 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # sshing
 alias ublogin='ssh -p 2222 lawrence@127.0.0.1'
-alias winlogin="ssh -p 3025 'Lawrence Wu'@127.0.0.1"
+alias ubstart='VBoxManage startvm "Ubuntu Mini" --type headless'
+alias ubstop='VBoxManage controlvm "Ubuntu Mini" poweroff'
 

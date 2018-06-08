@@ -8,3 +8,6 @@ command! -nargs=* VsplitTerm vsplit | terminal <args>
 command! -nargs=* Spt split | terminal <args>
 command! -nargs=* Vst vsplit | terminal <args>
 
+" vertical help
+command! -nargs=* Vhelp vert help <args>
+
