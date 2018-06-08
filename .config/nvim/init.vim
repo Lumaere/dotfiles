@@ -4,6 +4,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+
+" visual
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
