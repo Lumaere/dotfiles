@@ -43,3 +43,56 @@ function! SwapWords(word1, word2, ...) range
 endfunction
 command! -nargs=* -range SwapWords call SwapWords(<f-args>)
 
+" remove all spaces at the end of a line
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfunction
+nnoremap <Leader>c :call TrimWhitespace()<CR>
+
+function! ChompNewline(line)
+    return substitute(a:line, '\n\+$', '', '')
+endfunction
+
+function! FindMatchExtension()
+    let filename=expand('%:t')
+    if match(filename, '\.c') > 0
+        let target_name=substitute(filename, '\.c\(.*\)', '.h*', '')
+        let target_type='header'
+    elseif match(filename, '\.h') > 0
+        let target_name=substitute(filename, '\.h\(.*\)', '.c*', '')
+        let target_type='source'
+    else
+        echoerr 'Only works for *.h(*)/*.c(*) variations with simple names'
+        return 0
+    endif
+
+    let dirname=fnamemodify(expand('%:p'), ':h')
+    let cmd='find ' . dirname . " . -type f -iname \'" . target_name . "\' -print -quit"
+    let g:find_res=ChompNewline(system(cmd))
+    let find_res = g:find_res
+
+    echo find_res
+
+    if filereadable(find_res) == 0
+        echoerr 'Could not find matching ' . target_type . ' file for: ' . dirname . '/' . filename
+        return 0
+    endif
+
+    let full_path_no=bufnr(find_res)
+    if full_path_no != -1
+        exe 'b' string(full_path_no)
+        return 0
+    endif
+    let rel_path=fnamemodify(find_res, ':.')
+    let rel_path_no=bufnr(rel_path)
+    if rel_path_no != -1
+        exe 'b' string(rel_path_no)
+        return 0
+    endif
+
+    exe 'e ' find_res
+endfun
+nnoremap <Leader>o :call FindMatchExtension()<CR>
+
